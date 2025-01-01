@@ -1,0 +1,214 @@
+            - name: Github Action javascript-obfuscator
+  # You may pin to the exact commit or the version.
+  # uses: KevinRohn/github-action-javascript-obfuscator@4c17874d862979e5b7ce8dda82112e20f6a6cf50
+  uses: KevinRohn/github-action-javascript-obfuscator@v1.1.0
+  with:
+    # Single file or directory
+    input_path: 
+    # Output path for single file or directory
+    output_path: 
+    # Compact code output on one line.
+Type: boolean Default: true
+
+    compact: # optional
+    # Enables control flow flattening.
+Type: boolean Default: false
+
+    control_flow_flattening: # optional
+    # The probability that the control flow flattening transformation will be applied to the node.
+Type: boolean Default: false
+
+    control_flow_flattening_threshold: # optional
+    # Enables dead code injection
+Type: boolean Default: false
+
+    dead_code_injection: # optional
+    # The probability that the dead code injection transformation will be applied to the node.
+Type: boolean Default: false
+
+    dead_code_injection_threshold: # optional
+    # Disable browser Debug panel (can cause DevTools enabled browser freeze).
+Type: boolean Default: false
+
+    debug_protection: # optional
+    # Sets interval in milliseconds for debug protection so it is working even after page was loaded (can cause DevTools enabled browser freeze).
+Type: number Default: 0
+
+    debug_protection_interval: # optional
+    # Allow console.log, console.info, console.error and console.warn messages output into browser console.
+Type: boolean Default: false
+
+    disable_console_output: # optional
+    # Allows to run the obfuscated source code only on specific domains and/or sub-domains (comma separated).
+Type: string[] (comma separated, without whitespaces) Default: []
+
+    domain_lock: # optional
+    # Allows the browser to be redirected to a passed URL if the source code is not run on the domains specified by `domain_lock`.
+Type: string Default: about:blank
+
+    domain_lock_redirect_url: # optional
+    # A filename or glob which indicates files to exclude from obfuscation.
+Type: string[] (comma separated, without whitespaces) Default: []
+
+    exclude: # optional
+    # Enables force transformation of string literals, which being matched by passed RegExp patterns (comma separated).
+Type: string[] (comma separated, without whitespaces) Default: []
+
+    force_transform_strings: # optional
+    # The existing .json file that will be used to read and write identifier names cache.
+Type: string Default: 
+
+    identifier_names_cache_path: # optional
+    # Sets identifier names generator. Values: dictionary, hexadecimal, mangled, mangled-shuffled.
+Type: string Default: hexadecimal
+
+    identifier_names_generator: # optional
+    # Identifiers dictionary (comma separated) for `identifier_names_generator dictionary` option.
+Type: string[] (comma separated, without whitespaces) Default: []
+
+    identifiers_dictionary: # optional
+    # Sets prefix for all global identifiers.
+Type: string Default: ''
+
+    identifiers_prefix: # optional
+    # Prevents obfuscation of `require` and `dynamic` imports'
+Type: boolean Default: false
+
+    ignore_imports: # optional
+    # Enables logging of the information to the console.
+Type: boolean Default: false
+
+    log: # optional
+    # Enables numbers conversion to expressions.
+Type: boolean Default: false
+
+    numbers_to_expressions: # optional
+    # Allows to set options preset. Values: default, low-obfuscation, medium-obfuscation, high-obfuscation. Default: default
+Type: string Default: default
+
+    options_preset: # optional
+    # Allows to enable obfuscation of global variable and function names with declaration.
+Type: boolean Default: false
+
+    rename_globals: # optional
+    # UNSAFE: Enables renaming of property names. This probably MAY break your code.
+Type: boolean Default: false
+
+    rename_properties: # optional
+    # Specify `rename_properties` option mode. Values: safe, unsafe. Default: safe
+Type: string Default: safe
+
+    rename_properties_mode: # optional
+    # Disables obfuscation and generation of identifiers, which being matched by passed RegExp patterns (comma separated).
+Type: string[] (comma separated, without whitespaces) Default: []
+
+    reserved_names: # optional
+    # Disables transformation of string literals, which being matched by passed RegExp patterns (comma separated).
+Type: string[] (comma separated, without whitespaces) Default: []
+
+    reserved_strings: # optional
+    # Sets seed for random generator. This is useful for creating repeatable results.
+Type: string|number Default: false
+
+    seed: # optional
+    # Disables self-defending for obfuscated code.
+Type: boolean Default: false
+
+    self_defending: # optional
+    # Enables additional code obfuscation through simplification.
+Type: boolean Default: true
+
+    simplify: # optional
+    # Enables source map generation.
+Type: boolean Default: false
+
+    source_map: # optional
+    # Sets base url to the source map import url when `source_map_mode: separate`.
+Type: string Default: ''
+
+    source_map_base_url: # optional
+    # Sets file name for output source map when `source_map_mode: separate`.
+Type: string Default: ''
+
+    source_map_file_name: # optional
+    # Specify source map output mode. Values: inline, separate. Default: separate
+Type: string Default: 'separate'
+
+    source_map_mode: # optional
+    # Specify source map sources mode. Values: sources, sources-content. Default: sources-content
+Type: string Default: sources-content
+
+    source_map_sources_mode: # optional
+    # Splits literal strings into chunks with length of `split_strings_chunk_length` option value.
+Type: boolean Default: false
+
+    split_strings: # optional
+    # Sets chunk length of `split_strings` option
+Type: number Default: 10
+
+    split_strings_chunk_length: # optional
+    # Enables gathering of all literal strings into an array and replacing every literal string with an array call.
+Type: boolean Default: true
+
+    string_array: # optional
+    # Enables the transformation of calls to the string array.
+Type: boolean Default: false
+
+    string_array_calls_transform: # optional
+    # The probability that that calls to the string array will be transformed.
+Type: number Default: 0.5
+
+    string_array_calls_transform_threshold: # optional
+    # Encodes each string in strings array using base64 or rc4 (this option can slow down your code speed). Values: none, base64, rc4. Default: none
+Type: string[] (comma separated, without whitespaces) Default: []
+
+    string_array_encoding: # optional
+    # Allows to control the type of string array call indexes.
+Type: string[] (comma separated, without whitespaces) Default: [] 
+
+    string_array_indexes_type: # optional
+    # Enables additional index shift for all string array calls.
+Type: boolean Default: true
+
+    string_array_index_shift: # optional
+    # Enable rotation of string array values during obfuscation.
+Type: boolean Default: true
+
+    string_array_rotate: # optional
+    # Randomly shuffles string array items.
+Type: boolean Default: true
+
+    string_array_shuffle: # optional
+    # Sets the count of wrappers for the string array inside each root or function scope.
+Type: number Default: 1
+
+    string_array_wrappers_count: # optional
+    # Enables the chained calls between string array wrappers.
+Type: boolean Default: true
+
+    string_array_wrappers_chained_calls: # optional
+    # Allows to control the maximum number of string array wrappers parameters.
+Type: number Default: 2 
+
+    string_array_wrappers_parameters_max_count: # optional
+    # Allows to select a type of the wrappers that are appending by the `string_array_wrappers_count` option. Values: variable, function. Default: variable
+Type: string Default: 'variable'
+
+    string_array_wrappers_type: # optional
+    # The probability that the literal string will be inserted into `string_array` (Default: 0.8, Min: 0, Max: 1).
+Type: number Default: 0.8
+
+    string_array_threshold: # optional
+    # Allows to set target environment for obfuscated code. Values: browser, browser-no-eval, node. Default: browser.
+Type: string Default: browser
+
+    target: # optional
+    # Enables transformation of object keys.
+Type: boolean Default: false   
+
+    transform_object_keys: # optional
+    # Allows to enable/disable string conversion to unicode escape sequence.
+Type: boolean Default: false
+
+    unicode_escape_sequence: # optional
+          
